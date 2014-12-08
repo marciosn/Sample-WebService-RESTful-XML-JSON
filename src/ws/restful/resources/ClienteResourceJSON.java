@@ -37,7 +37,7 @@ public class ClienteResourceJSON {
 	}
 	
 	@POST
-	@Consumes("text/xml")
+	@Consumes("application/json")
 	@Produces("text/plain")
 	public String inseriCliente(Cliente cliente){
 		acessBD.inseriClienteBanco(cliente);
@@ -47,7 +47,7 @@ public class ClienteResourceJSON {
 	
 	@Path("{id}")
 	@PUT
-	@Consumes("text/xml")
+	@Consumes("application/json")
 	@Produces("text/plain")
 	public String atualizarCliente(Cliente cliente, @PathParam("id") int id){
 		Cliente old = acessBD.getClienteById(id);
